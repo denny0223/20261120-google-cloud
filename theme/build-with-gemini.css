@@ -1,0 +1,321 @@
+/* @theme build-with-gemini */
+/* @size 16:9 1280px 720px */
+
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("assets/fonts/GoogleSansFlex-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("assets/fonts/GoogleSansCode-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+section {
+  --canvas: #212226;
+  --panel: #2f3034;
+  --white: #f8f9fc;
+  --muted: #c4c7cd;
+  --accent: #3c90ff;
+  --link: #9dd2ff;
+  --mono: "Google Sans Code", "Noto Sans Mono CJK TC", monospace;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  width: 1280px;
+  height: 720px;
+  padding: 58px 32px 75px;
+  background: var(--canvas);
+  color: var(--white);
+  font: 400 30px/1.42 "Google Sans Flex", "Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  line-break: strict;
+}
+section *, section *::before, section *::after { box-sizing: border-box; }
+h1, h2, p, blockquote, pre, ul, ol, dl, dd { margin: 0; }
+h1, h2 { font-weight: 450; line-height: 1.14; text-wrap: balance; }
+h1 { font-size: 54px; }
+h2 { font-size: 34px; }
+strong { font-weight: 600; }
+em { font-style: normal; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+code, pre { font-family: var(--mono); }
+code { font-size: 0.94em; color: var(--link); }
+:not(pre) > code { white-space: nowrap; }
+pre code { font-size: inherit; }
+footer, section[data-marpit-pagination]::after {
+  position: absolute;
+  bottom: 21px;
+  padding: 0;
+  color: #b0b2b8;
+  font: 15px/1 var(--mono);
+}
+footer { left: 32px; }
+section[data-marpit-pagination]::after { content: attr(data-marpit-pagination); right: 32px; }
+
+/* The event mark and both rows of chevrons are one original image on template 6. */
+section.archetype-cover { padding: 402px 45px 35px; text-align: center; }
+.cover-art { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; }
+.portrait { position: absolute; left: 518px; top: 129px; width: 243px; height: 243px; border-radius: 50%; object-fit: cover; }
+section.archetype-cover h1 { font-size: 63px; }
+section.archetype-cover h2 { margin-top: 15px; font-size: 38px; }
+.cover-byline { margin-top: 33px; color: var(--link); font: 28px/1.2 var(--mono); }
+.cover-date { position: absolute; top: 91px; right: 54px; font-size: 34px; }
+
+/* Template 3 directs attention from a left heading to the right-hand content. */
+section.arrow-layout { background: var(--canvas) url("assets/event/agenda-arrow.png") -77px 228px / 522px auto no-repeat; }
+section.arrow-layout h1 { max-width: 560px; font-size: 77px; }
+section.archetype-link { background-position: -77px 164px; }
+section.archetype-link h1 { font-size: 86px; }
+section.archetype-process h1 { font-size: 70px; }
+.slide-link {
+  position: absolute;
+  top: 110px;
+  left: 610px;
+  width: 630px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 34px;
+  line-height: 1.18;
+}
+.qr-field {
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #999fb8;
+  background-image: linear-gradient(110deg in oklab, #ab99ba, #8ba7c1);
+}
+.qr-field img {
+  display: block;
+  width: 444px;
+  height: 444px;
+  image-rendering: pixelated;
+  mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+.agenda-list {
+  position: absolute;
+  inset: 103px 34px 107px 620px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+.agenda-list li { position: relative; padding-left: 76px; font-size: 34px; }
+.agenda-list li::before {
+  content: counter(list-item, decimal-leading-zero) / "";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font: 42px/1.2 var(--mono);
+}
+.agenda-list strong { margin-right: 20px; font-size: 41px; font-weight: 450; }
+.agenda-list span { color: var(--muted); font-size: 27px; }
+section.archetype-process > p { position: absolute; left: 32px; bottom: 63px; font-size: 23px; }
+
+section.archetype-title {
+  padding: 54px 40px;
+  background: var(--canvas) url("assets/event/crosses-pink.png") 717px 222px / 564px auto no-repeat;
+}
+section.archetype-title h1 { max-width: 830px; font-size: 122px; }
+section.archetype-title em { color: var(--accent); font-family: var(--mono); }
+section.archetype-speaker { background: var(--canvas) url("assets/event/crosses-pink.png") 769px 0 / 509px auto no-repeat; }
+section.archetype-speaker h1 { font-size: 94px; }
+section.archetype-speaker ul { max-width: 745px; margin-top: 45px; padding-left: 1.15em; }
+section.archetype-speaker li + li { margin-top: 9px; }
+
+section.archetype-logo { display: grid; place-items: center; padding: 0; }
+section.archetype-logo img { display: block; width: 800px; height: auto; }
+
+section.archetype-section {
+  background: url("assets/event/spark.png") 1107px 250px / 89px auto no-repeat,
+              url("assets/event/ribbon-green.png") 30px 32px / 1219px auto no-repeat var(--canvas);
+}
+section.archetype-section:not(.unnumbered)::before {
+  content: "01" / "";
+  position: absolute;
+  top: 76px;
+  left: 71px;
+  color: var(--canvas);
+  font: 61px/1.25 var(--mono);
+}
+section.archetype-section h1 span {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  height: 164px;
+  left: 184px;
+  top: 40px;
+  width: 964px;
+  font-size: 94px;
+  white-space: nowrap;
+}
+section.archetype-section h1 span + span { top: 213px; left: 207px; width: 866px; }
+section.archetype-section > p { position: absolute; left: 68px; right: 70px; top: 455px; font-size: 38px; }
+section.archetype-section strong { font-weight: 450; }
+
+section.archetype-quote {
+  --quote-art: url("assets/event/quote-pink.png");
+  --quote-ink: #ff7a85;
+  padding: 44px 347px 65px 46px;
+  background: var(--canvas) var(--quote-art) 939px 169px / 308px auto no-repeat;
+}
+section.quote-blue { --quote-art: url("assets/event/quote-green.png"); --quote-ink: var(--accent); }
+section.archetype-quote h1 { font-size: 72px; }
+section.archetype-quote blockquote { margin-top: 30px; font-size: 41px; line-height: 1.32; text-wrap: balance; }
+section.archetype-quote em { color: var(--quote-ink); }
+section.archetype-quote > p { margin-top: 34px; font-size: 30px; }
+section.spoken-quote h1 { font-size: 38px; }
+section.spoken-quote blockquote { margin-top: 27px; font-size: 62px; line-height: 1.24; }
+
+/* A whole native panel layout sits under editable labels and text (templates 22 and 23). */
+section.archetype-two-panel { background: var(--canvas) url("assets/event/panels-two.svg") center / 100% 100% no-repeat; }
+section.archetype-two-panel:has(> p + .layout-two) { padding-top: 24px; }
+section.archetype-three-panel { background: var(--canvas) url("assets/event/panels-three.svg") center / 100% 100% no-repeat; }
+.layout-two, .layout-three {
+  position: absolute;
+  inset: 141px 32px 87px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+.layout-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.layout-two > div { padding: 34px; }
+.layout-three > div { padding: 34px 22px; }
+.layout-two > div > :is(h2, p, pre) { max-width: 483px; }
+.layout-three > div > :is(h2, p) { max-width: 332px; }
+.panel-label {
+  display: grid;
+  place-items: center;
+  width: 162px;
+  height: 28px;
+  margin-bottom: 26px;
+  padding-top: 2px; /* Match the text baseline in the Google Slides pill. */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.layout-two .panel-label { margin-left: 4px; }
+.layout-two h2, .layout-three h2 { margin-bottom: 20px; font-size: 40px; text-wrap: balance; }
+.layout-two p, .layout-three p { font-size: 31px; text-wrap: balance; }
+.layout-two .media-slot { height: 255px; aspect-ratio: auto; }
+.layout-two ~ p, .layout-three ~ p {
+  position: absolute;
+  top: 642px;
+  left: 32px;
+  right: 32px;
+  color: var(--muted);
+  font-size: 22px;
+}
+section.command-panel h2 { font-size: 33px; }
+section.command-panel pre { margin: 22px 0; font-size: 24px; line-height: 1.45; }
+section.command-panel .worktree-list { font-size: 20px; line-height: 2; }
+.worktree-list samp { font: inherit; }
+section.command-panel .layout-two > div > p { font-size: 28px; }
+
+section.archetype-table { display: grid; grid-template: auto auto 1fr / 393px minmax(0, 1fr); gap: 20px 38px; }
+section.archetype-table::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto 0 0;
+  width: 425px;
+  background: var(--panel) url("assets/event/chevrons-amber.png") -940px 562px / 1378px auto no-repeat;
+}
+section.archetype-table h1, section.archetype-table > p { grid-column: 1; max-width: 361px; }
+section.archetype-table h1 { grid-row: 1; max-width: 383px; font-size: 47px; }
+section.archetype-table > p { font-size: 27px; }
+section.archetype-table footer { left: 463px; }
+table { grid-column: 2; grid-row: 1 / 4; align-self: center; width: 100%; border-collapse: collapse; font-size: 29px; }
+th, td { padding: 19px 12px; border-bottom: 1px solid #494b52; text-align: left; }
+th { border-color: #9e9e9e; font-weight: 550; }
+td strong { white-space: nowrap; }
+section.directory-table table { font-size: 25px; }
+section.directory-table h1 { font-size: 47px; }
+
+section.archetype-media {
+  display: grid;
+  grid-template: auto 1fr auto / 565px minmax(0, 1fr);
+  column-gap: 53px;
+  background: var(--canvas) url("assets/event/crosses-pink.png") 381px 491px / 269px auto no-repeat;
+}
+section.archetype-media h1 { grid-area: 1 / 1; margin-bottom: 26px; font-size: 49px; }
+.layout-media { display: contents; }
+.layout-media > div:first-child { grid-area: 2 / 1; }
+.layout-media h2 { margin-bottom: 15px; font-size: 33px; }
+.layout-media p { font-size: 29px; text-wrap: balance; }
+.layout-media p + p { margin-top: 12px; }
+.layout-media p + h2 { margin-top: 28px; }
+section.archetype-media > p { grid-area: 3 / 1; max-width: 396px; font-size: 21px; }
+.media-slot { display: grid; place-items: center; text-align: center; aspect-ratio: 16 / 9; }
+.layout-media > .media-slot { grid-area: 1 / 2 / 4; align-self: center; }
+.media-slot p { max-width: 95%; font-size: 28px; line-height: 1.5; text-wrap: balance; }
+.media-slot small { display: block; margin-bottom: 10px; color: var(--link); font-size: 21px; }
+.media-slot span { color: var(--muted); font-size: 22px; }
+.media-slot :is(img, video) { display: block; width: 100%; height: 100%; object-fit: contain; }
+.media-slot { min-width: 0; min-height: 0; }
+.layout-media > .evidence-text { text-align: left; }
+.evidence-text blockquote { font-size: 36px; line-height: 1.5; }
+.evidence-text > div > code { font-size: 45px; }
+.evidence-text > div > p { margin-top: 20px; }
+
+section.swarm-board { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); column-gap: 32px; }
+section.swarm-board > p { grid-column: 1 / -1; max-width: none; display: flex; justify-content: space-between; }
+section.swarm-board .layout-media > .media-slot { grid-row: 1 / 3; }
+section.swarm-board .layout-media p { font-size: 25px; }
+section.swarm-board .media-slot a { display: block; width: 100%; }
+section.swarm-board .media-slot img { height: auto; }
+
+section.archetype-rows h1, section.archetype-rows > p { max-width: 450px; }
+section.archetype-rows > p { margin-top: 24px; font-size: 28px; text-wrap: balance; }
+section.archetype-rows::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 400px;
+  width: 344px;
+  height: 172px;
+  background: url("assets/event/chevrons-teal.png") -346px -262px / 1378px auto no-repeat;
+}
+.term-rows {
+  position: absolute;
+  inset: 115px 32px 119px 485px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 355px 1fr;
+  align-items: center;
+  gap: 0 38px;
+}
+.term-rows dt { color: var(--accent); font: 48px/1.15 var(--mono); text-align: right; }
+.term-rows dd { font-size: 30px; text-wrap: balance; }
+.term-rows strong { color: var(--muted); font-size: 25px; font-weight: 450; }
+
+/* Template 30 mirrors the left artwork and keeps the full event lockup on its own. */
+section.archetype-closing {
+  padding: 506px 25px 15px;
+  background: var(--canvas) url("assets/event/crosses-green.png") 909px 43px / 371px auto no-repeat;
+  text-align: center;
+}
+section.archetype-closing::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 43px;
+  width: 371px;
+  height: 525px;
+  background: url("assets/event/crosses-green.png") center / contain no-repeat;
+  transform: scaleX(-1);
+}
+.closing-mark { position: absolute; top: 73px; left: 476.5px; width: 327px; }
+.closing-mark img { display: block; width: 100%; height: auto; }
+section.archetype-closing h1 { font-size: 66px; }
+.credits { margin-top: 15px; font-size: 21px; line-height: 1.4; }
+.credits p + p { margin-top: 5px; }
+.credits p:last-child { color: var(--muted); }
+.credits img { vertical-align: middle; }
