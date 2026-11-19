@@ -102,9 +102,35 @@ if (window.location.hostname === 'denny.one') {
     <h2><a href="https://github.com/denny0223/kitty-showcase/">kitty-showcase</a> · 03 選取</h2>
   </div>
   <div class="media-slot">
-    <video src="assets/demo/kitty-hints.mp4" poster="assets/demo/kitty-hints.png" width="760" height="360" controls playsinline preload="none" loading="lazy" aria-label="播放 Kitty Hints 實機操作。選取路徑後，cat 顯示 timeout_seconds = 2.0。">瀏覽器可直接開啟<a href="assets/demo/kitty-hints.mp4">操作影片</a>。</video>
+    <video id="kitty-hints" src="assets/demo/kitty-hints.mp4" poster="assets/demo/kitty-hints.png" width="760" height="360" controls muted playsinline preload="none" loading="lazy" aria-label="播放 Kitty Hints 實機操作。選取路徑後，cat 顯示 timeout_seconds = 2.0。">瀏覽器可直接開啟<a href="assets/demo/kitty-hints.mp4">操作影片</a>。</video>
   </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const view = document.body.dataset.bespokeView;
+  if (view !== '' && view !== 'presenter') return;
+
+  const video = document.getElementById('kitty-hints');
+  const slide = video.closest('.bespoke-marp-slide');
+  let wasActive = false;
+  function syncPlayback() {
+    const active = slide.classList.contains('bespoke-marp-active');
+    if (active === wasActive) return;
+    wasActive = active;
+
+    if (active) {
+      video.currentTime = 0;
+      video.play().catch(() => {
+        // Native controls allow manual playback if the browser blocks autoplay.
+      });
+    } else {
+      video.pause();
+    }
+  }
+  new MutationObserver(syncPlayback).observe(slide, { attributeFilter: ['class'] });
+  syncPlayback();
+});
+</script>
 <footer>Build with Gemini</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-footer="Build with Gemini" data-class="archetype-media" data-theme="build-with-gemini" data-lang="zh-TW" lang="zh-TW" class="archetype-media" data-marpit-pagination="9" style="--paginate:true;--footer:Build with Gemini;--class:archetype-media;--theme:build-with-gemini;--lang:zh-TW;" data-marpit-pagination-total="28" data-size="16:9">
