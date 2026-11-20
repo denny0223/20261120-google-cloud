@@ -442,6 +442,7 @@ git worktree list
 # Thanks for listening
 
 <div class="credits">
-  <p>本投影片原創內容採用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant"><img src="assets/by-sa.png" alt="CC BY-SA" width="88" height="31"> 創用 CC「姓名標示－相同方式分享 4.0 國際」</a>授權</p>
-  <p><a href="https://marp.app/"><img src="assets/marp-dark.png" alt="" width="87" height="27"> Marp</a> 製作</p>
+  <p>原創內容採用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant"><img src="assets/by-sa.png" alt="" width="88" height="31"> CC BY-SA 創用 CC「姓名標示－相同方式分享 4.0 國際」</a>授權</p>
+  <p><a href="https://marp.app/"><img src="assets/marp-dark.png" alt="Marp" width="87" height="27"></a> 製作</p>
+  <p>活動版型與第三方素材另見<a href="https://github.com/denny0223/20261120-google-cloud#素材來源與授權">素材來源與授權</a></p>
 </div>
